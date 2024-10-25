@@ -1,0 +1,145 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    background-color: 353535;
+	font-family: "ubuntu", Arial, sans-serif;
+	overflow-x: hidden;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1663970206579-c157cba7edda?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBkZSUyMHBhbnRhbGxhJTIwcGFyYSUyMHBjfGVufDB8fDB8fHww'); /* Imagen de fondo */
+    background-size: cover; /* La imagen cubre todo el fondo */
+    background-position: center; /* La imagen se centra en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* La imagen se queda fija al hacer scroll */
+}
+
+/* Contenedor principal para el título y la calculadora */
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px; /* Espacio entre el título y la calculadora */
+}
+
+/* Estilo del título */
+.autor {
+    color: white !important;  /* Forzar el color blanco */
+    font-size: 1.5em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Estilo del contenedor de la calculadora */
+.calculadora {
+    background-color: #111111;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+/* Pantalla de la calculadora */
+input {
+    width: 100%;
+    height: 50px;
+    font-size: 2em;
+    text-align: right;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de los botones */
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Estilo de los botones */
+button {
+    font-size: 1.5em;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Botones numéricos */
+.numero {
+    background-color: #e0e0e0;
+}
+
+.numero:hover {
+    background-color: #d6d6d6;
+}
+
+/* Botones de operadores */
+.operador {
+    background-color: #6916d5db;
+    color: white;
+}
+
+.operador:hover {
+    background-color: #e08b00;
+}
+
+/* Botones especiales (C y %) */
+.especial {
+    background-color: #cfcfcf;
+}
+
+.especial:hover {
+    background-color: #bdbdbd;
+}
+
+@font-face {
+	font-family: "ubuntu";
+	font-style: italic;
+	font-weight: 300;
+	src: local("Lato Light Italic"), local("Lato-LightItalic"),
+		url(https://fonts.gstatic.com/s/ubuntucondensed/v8/u-4k0rCzjgs5J7oXnJcM_0kACGMtT-Dfqw.woff2)
+			format("woff2");
+}
+
+
+a {
+	text-decoration: none;
+	color: #9ca0b1;
+}
+
+.wrapper {
+	text-align: center;
+	h1 {
+		color: #fff;
+		font-size: 52px;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-family: "Josefin Sans", sans-serif;
+		background: linear-gradient(to right,#991caa 10%, #dd8feb 50%, #6f16af 60%);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 1.5s linear infinite;
+		display: inline-block;
+	}
+}
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+
