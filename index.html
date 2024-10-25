@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css"> <!-- Enlace al CSS -->
+</head>
+<body>
+
+<div class="contenedor">
+    <!-- Título -->
+    <div class="wrapper">
+        <h1>Calculadora</h1>
+        <p class = "autor">By Dalila Fonseca Maya</p>
+    </div>
+    
+    <!-- Calculadora -->
+    <div class="calculadora">
+        <input type="text" id="pantalla" readonly> <!-- Pantalla de la calculadora -->
+
+        <div class="botones">
+            <button class="especial" onclick="limpiar()">C</button>
+            <button class="especial" onclick="porcentaje()">%</button>
+            <button class="especial" onclick="operar('/')">÷</button>
+            <button class="operador" onclick="operar('*')">×</button>
+
+            <button class="numero" onclick="agregarNumero(7)">7</button>
+            <button class="numero" onclick="agregarNumero(8)">8</button>
+            <button class="numero" onclick="agregarNumero(9)">9</button>
+            <button class="operador" onclick="operar('-')">−</button>
+
+            <button class="numero" onclick="agregarNumero(4)">4</button>
+            <button class="numero" onclick="agregarNumero(5)">5</button>
+            <button class="numero" onclick="agregarNumero(6)">6</button>
+            <button class="operador" onclick="operar('+')">+</button>
+
+            <button class="numero" onclick="agregarNumero(1)">1</button>
+            <button class="numero" onclick="agregarNumero(2)">2</button>
+            <button class="numero" onclick="agregarNumero(3)">3</button>
+            <button class="operador" onclick="calcular()">=</button>
+
+            <button class="numero" style="grid-column: span 2;" onclick="agregarNumero(0)">0</button>
+            <button class="numero" onclick="agregarNumero('.')">.</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let numeroActual = '';  
+    let operacion = '';    
+
+    function agregarNumero(num) {
+        if (num === '.' && numeroActual.includes('.')) return;
+        numeroActual += num;
+        document.getElementById('pantalla').value = numeroActual;
+    }
+
+    function operar(op) {
+        if (numeroActual === '') return;
+        operacion += numeroActual + ' ' + op + ' ';
+        numeroActual = '';
+        document.getElementById('pantalla').value = '';
+    }
+
+    function porcentaje() {
+        if (numeroActual === '') return;
+        numeroActual = (parseFloat(numeroActual) / 100).toString();
+        document.getElementById('pantalla').value = numeroActual;
+    }
+
+    function calcular() {
+        if (numeroActual === '') return;
+        operacion += numeroActual;
+
+        try {
+            const resultado = eval(operacion);
+            document.getElementById('pantalla').value = resultado;
+        } catch (error) {
+            alert('Error en la operación.');
+        }
+
+        numeroActual = '';
+        operacion = '';
+    }
+
+    function limpiar() {
+        numeroActual = '';
+        operacion = '';
+        document.getElementById('pantalla').value = '';
+    }
+</script>
+
+</body>
+</html>
