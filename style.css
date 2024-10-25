@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    margin: 20;
+    margin: 0;
     height: 100vh;
     display: grid;
     place-items: center;
@@ -78,7 +78,7 @@ button {
 }
 
 .numero:hover {
-    background-color: #d6d6d6;
+    background-color: #c437aa;
 }
 
 /* Botones de operadores */
@@ -88,7 +88,7 @@ button {
 }
 
 .operador:hover {
-    background-color: #e08b00;
+    background-color: #bc89d6;
 }
 
 /* Botones especiales (C y %) */
@@ -97,7 +97,7 @@ button {
 }
 
 .especial:hover {
-    background-color: #bdbdbd;
+    background-color: #887a7a;
 }
 
 @font-face {
@@ -143,3 +143,9 @@ a {
 	}
 }
 
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+}
